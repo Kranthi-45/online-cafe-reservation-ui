@@ -1,0 +1,22 @@
+.top-navbar .container-fluid{
+    margin: 0px 50px !important
+}
+
+.top-navbar .navbar-nav {
+    float: right;
+}
+
+.top-navbar .book-btn{    
+    background-color: yellow;
+    border-radius: 30px;
+    height: 40px;
+    width: 120PX;
+    text-align: center;
+    margin-top: 6PX;
+}
+
+.top-navbar.navbar {
+    /* min-height: 50px; */
+    margin-bottom: 5px !important;
+    /* border: 1px solid transparent; */
+}

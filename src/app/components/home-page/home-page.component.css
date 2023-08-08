@@ -1,0 +1,49 @@
+.home-container {
+    /* background-image: url(background.jpg);
+    background-repeat: no-repeat; */
+    width: 100%;
+    /* height: 100vh; */
+    /* min-height: 100px; */
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../../../assets/images/home-wallpaper.png);
+    background-size: cover;
+    background-position: center;
+    /* position: relative; */
+}
+
+
+.home-container .center-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.home-heading{
+    text-align: center;
+}
+  
+.home-buttons{
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.round-btn{
+  border-radius: 50px;
+}
+/*Success - Green */
+.success-outline {
+  color: #4cae4c;
+  border-color: #4cae4c;
+}
+
+.success-outline:hover {
+  border-color: #4cae4c;
+  background-color: #1E4620;
+  color: #fff;
+}
+ 
+.home-text, .home-buttons, .home-heading {
+  margin : 20px 0px;
+}

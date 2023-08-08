@@ -1,0 +1,22 @@
+<p>side-navbar works!</p>
+<div id="mySidenav" class="sidenav">
+    <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+    <a [routerLink]="['/dashboard/component1']">DashBoard</a>
+    <a [routerLink]="['/dashboard/add-menu']">Add Menu</a>
+    <a [routerLink]="['/dashboard/complete-menu']">Complete Menu</a>
+    <a [routerLink]="['/dashboard/contact-details']">Contact Details</a>
+  </div>
+  
+  <!-- <h2>Animated Sidenav Example</h2>
+  <p>Click on the element below to open the side navigation menu.</p>
+  <span style="font-size:30px;cursor:pointer" onclick='openNav()'>&#9776; open</span> -->
+  
+  <script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  </script>
