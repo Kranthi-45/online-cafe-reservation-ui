@@ -1,1 +1,60 @@
-<p>add-menu works!</p>
+<app-breadcrumb></app-breadcrumb>
+
+<div class="container"> 
+    <form class="form-horizontal" [formGroup]="addMenuForm" data-toggle="validator">
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="menu-name" >Menu Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" formControlName="menuName" id="menu-name" placeholder="Enter Menu Name" [ngClass]="{'has-error': addMenuForm.get('menuName')?.touched && addMenuForm.get('menuName')?.invalid}">
+            <div *ngIf="addMenuForm.get('menuName')?.touched && addMenuForm.get('menuName')?.invalid" class="help-block">
+              <div *ngIf="addMenuForm.get('menuName')?.errors?.required">Item Name is Required</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="menu-description" >Password:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" formControlName="menuDescription" id="menu-description" placeholder="Enter Menu Description" [ngClass]="{'is-invalid': addMenuForm.get('menuDescription')?.touched && addMenuForm.get('menuDescription')?.invalid}">
+            <div *ngIf="addMenuForm.get('menuDescription')?.touched && addMenuForm.get('menuDescription')?.invalid" class="invalid-feedback">
+              <div *ngIf="addMenuForm.get('menuDescription')?.errors?.required">Description is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="menu-price" >Menu Price:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" formControlName="menuPrice" id="menu-price" placeholder="Enter Menu Price" [ngClass]="{'is-invalid': addMenuForm.get('menuPrice')?.touched && addMenuForm.get('menuPrice')?.invalid}">
+              <div *ngIf="addMenuForm.get('menuPrice')?.touched && addMenuForm.get('menuPrice')?.invalid" class="invalid-feedback">
+                <div *ngIf="addMenuForm.get('menuPrice')?.errors?.required">Price is required</div>
+              </div>
+            </div>
+          </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+                <div class="radio">
+                    <label><input type="radio" name="menuCategory" checked formControlName="menuCategory" value="BREAK_FAST">breakfast</label>
+                  </div>
+                  <div class="radio">
+                    <label><input type="radio" name="menuCategory" formControlName="menuCategory" value="LUNCH">lunch</label>
+                  </div>
+                  <div class="radio ">
+                    <label><input type="radio" name="menuCategory" formControlName="menuCategory" value="DINNER">dinner</label>
+                  </div>
+                  <div class="radio ">
+                    <label><input type="radio" name="menuCategory" formControlName="menuCategory" value="DESSERT">dessert</label>
+                  </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" (click)="fnAddMenu()"  class="btn btn-info">Submit</button>
+          </div>
+        </div>
+        <div class="alert alert-success alert-dismissible" *ngIf="status">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Success! </strong> {{statusMessage}}
+        </div>
+      </form>
+</div>

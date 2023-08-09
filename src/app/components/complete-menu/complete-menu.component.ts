@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-complete-menu',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompleteMenuComponent implements OnInit {
 
-  constructor() { }
+  menus:any;
+  constructor( private ms: MenuService) { }
 
   ngOnInit(): void {
+    this.fngetAllMenus();
   }
-
+  fngetAllMenus() {
+    this.ms.getAllMenu().subscribe(
+      (data:any) => {
+        console.log(data);
+        this.menus = data?.items;
+      }, (error) => {
+        console.log(error);
+      }
+    )
+  }
 }

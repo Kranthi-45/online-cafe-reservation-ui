@@ -1,1 +1,28 @@
-<p>complete-menu works!</p>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+      <!-- <div class="col-sm-2">
+      </div> -->
+      <div class="col-md-10">
+        <table class="table table-bordered-collapse table-striped table-hover">
+
+          <thead>
+              <th>Id</th><th>Item Name</th><th>Description</th><th>Price</th><th>Category</th><th>Availability</th><th>Action-Update</th><th>Action-Delete</th>
+          </thead>
+          <tbody>
+             <tr *ngFor="let m of menus ">
+                  <td>{{m.itemId}}</td>
+                  <td>{{m.itemName}}</td>
+                  <td>{{m.description}}</td>
+                  <td>{{m.price}}</td>
+                  <td>{{m.type}}</td>
+                  <td>{{m.availability}}</td>
+                  <td><input type="button" value="Update" class="btn btn-success"></td>
+                  <td><input type="button" value="Update" class="btn btn-danger"></td>
+                </tr>
+            </tbody>    
+      </table>
+      </div>
+    </div>   
+  </div>

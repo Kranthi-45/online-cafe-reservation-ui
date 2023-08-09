@@ -10,6 +10,9 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { AddMenuComponent } from './components/add-menu/add-menu.component';
 import { CompleteMenuComponent } from './components/complete-menu/complete-menu.component';
 import { ContactDetailsComponent } from './components/contact-details/contact-details.component';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,10 +24,14 @@ import { ContactDetailsComponent } from './components/contact-details/contact-de
     AddMenuComponent,
     CompleteMenuComponent,
     ContactDetailsComponent,
+    BreadcrumbComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
