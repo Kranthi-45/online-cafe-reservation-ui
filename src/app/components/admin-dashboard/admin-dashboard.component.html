@@ -1,12 +1,27 @@
-<!-- <app-top-navbar></app-top-navbar> -->
-<div class="dashboard-container">
-     <div class="row">
-      <div class="col-md-2">
-        <app-side-navbar></app-side-navbar>
-      </div>
-      <div class="col-md-10">
-        <router-outlet></router-outlet>
-      </div>
-     </div>
+
+<h3> Dashboard</h3>
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<div class="card-containers">
+    <div class="card red"></div>
+    <div class="card blue"></div>
+    <div class="card green"></div>
+    <div class="card yellow"></div>
 </div>
 
+<h3> Reservation</h3><br>
+<div class="container">
+    <table class="table table-bordered-collapse table-striped table-hover">
+        <thead>
+        <th>Customer Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Visit Date</th>
+        <th>Time</th>
+        <th>No. of People</th>
+        <th>Customer Message</th>
+        <th>Booking Time</th>
+        <th>Confirm Booking</th>
+        <th>Status</th>
+        </thead>
+    </table>
+</div>

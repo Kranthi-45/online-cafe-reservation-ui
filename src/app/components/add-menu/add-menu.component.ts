@@ -9,7 +9,7 @@ import { MenuService } from 'src/app/services/menu.service';
   styleUrls: ['./add-menu.component.css']
 })
 export class AddMenuComponent implements OnInit {
-
+  breadcrumb = ['Home', 'Add Menu'];
   addMenuForm:FormGroup;
   menu:AddMenu[] | undefined;
   status:Boolean=false;

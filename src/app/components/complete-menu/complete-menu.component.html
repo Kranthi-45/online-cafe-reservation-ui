@@ -1,6 +1,12 @@
-<br>
-<br>
+
+<h3> Complete Menu</h3>
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+
 <div class="container">
+    <div class="alert alert-success alert-dismissible" *ngIf="status">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Success! </strong> {{statusMessage}}
+      </div>
     <div class="row">
       <!-- <div class="col-sm-2">
       </div> -->
@@ -18,11 +24,73 @@
                   <td>{{m.price}}</td>
                   <td>{{m.type}}</td>
                   <td>{{m.availability}}</td>
-                  <td><input type="button" value="Update" class="btn btn-success"></td>
-                  <td><input type="button" value="Update" class="btn btn-danger"></td>
+                  <td> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" (click)="fnUpdateMenu(m)" [disabled]="!m.enable">Update</button>
+                  </td>
+                  <td><input type="button" value="Delete" (click)="fnDelete(m)" class="btn btn-danger" [disabled]="!m.enable"></td>
+                  <td>
+                    <label class="enableLabel">Enabled</label> &nbsp;
+                    <label class="switch">
+                    <input type="checkbox" [(ngModel)]="m.enable" (ngModelChange)="fnEnabled($event, m)">
+                    <span class="slider round"></span>
+                    </label> &nbsp;
+                    <label class="enableLabel">Disabled</label>
+                  </td>
                 </tr>
             </tbody>    
       </table>
       </div>
     </div>   
   </div>
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="editMenuForm">
+            <div class="form-group">
+              <label for="menuName">Item Id:</label>
+              <input type="text" class="form-control" placeholder="Enter Item Id" id="itemId" formControlName="itemId" [disabled]="enableId" >
+            </div>
+            <div class="form-group">
+              <label for="menuName">Item Name:</label>
+              <input type="text" class="form-control" placeholder="Enter Item Name" id="itemName" formControlName="itemName">
+            </div>
+            <div class="form-group">
+              <label for="description">Description:</label>
+              <input type="text" class="form-control" placeholder="Enter Description" id="description" formControlName="description">
+            </div>
+            <div class="form-group">
+              <label for="price">Price:</label>
+              <input type="number" class="form-control" placeholder="Enter Menu Price" id="price" formControlName="price">
+            </div>
+            <div class="form-group">
+              <label for="">Category:</label>
+                <div class="category-container">
+                  <div class="radio">
+                    <label><input type="radio" name="type" checked formControlName="type" value="BREAK_FAST">breakfast</label>
+                  </div>
+                  <div class="radio">
+                    <label><input type="radio" name="type" formControlName="type" value="LUNCH">lunch</label>
+                  </div>
+                  <div class="radio ">
+                    <label><input type="radio" name="type" formControlName="type" value="DINNER">dinner</label>
+                  </div>
+                  <div class="radio ">
+                    <label><input type="radio" name="type" formControlName="type" value="DESSERT">dessert</label>
+                  </div>
+                </div>
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" data-dismiss="modal" (click)="fnSaveMenu()">Save</button>
+        </div>
+      </div>   
+    </div>
+   

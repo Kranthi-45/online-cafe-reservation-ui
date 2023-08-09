@@ -3,11 +3,16 @@
       <li class="breadcrumb-item active" aria-current="page">Home</li>
     </ol>
   </nav> -->
-  <h3> ADD MENU</h3>
   <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="#">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Add Menu</li>
+    <ol class="breadcrumb" >
+      <ng-container *ngFor="let item of breadcrumb; let last = last">
+        <ng-container *ngIf="!last; else lastItem">
+          <li class="breadcrumb-item"><a href="#">{{item}}</a></li>
+        </ng-container>
+        <ng-template #lastItem>
+          <li class="breadcrumb-item active">{{item}}</li>
+        </ng-template>
+      </ng-container>
     </ol>
   </nav>
 <!--   
