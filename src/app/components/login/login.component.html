@@ -1,1 +1,66 @@
-<p>login works!</p>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Food In Life!</title>
+</head>
+<div class="container-fluid mobileLoginContainer2">
+  <div class="row">
+    <div class="col-md-8 mobileQuotes" style="color: darkgrey"> <br><br><br><br><br><br>
+      <h3 style="font-style: italic; font-weight: bold; text-align: center; font-family:cursive">“ The whole life is
+        just like eating food"</h3>
+      <h3 style="font-style: italic; font-weight: bold; margin-left:800px; font-family:cursive">..Terry</h3> <br>
+      <h3 style="font-style: italic; font-weight: bold; text-align: center; font-family:cursive">“ Delicacy can fill your
+        empty spaces in life and loneliness"</h3>
+      <h3 style="font-style: italic; font-weight: bold; margin-left:800px; font-family:cursive">..Pedro</h3> <br>
+    </div>
+
+    <div class="col-md-4">
+      <body>
+        <br><br><br>
+        <div class="box-shadow login">
+          <div id="bg1">
+            <form [formGroup]="loginForm">
+              <br>
+              <h3 style="text-align:center;">Login</h3>
+
+              <div class="form-group">
+                <label for="username" class="col-form-label">User Name: </label>
+                <input type="text" name="" id="username" class="form-control" placeholder="Enter UserName"
+                  formControlName="username"
+                  [ngClass]="{'is-invalid': loginForm.get('username').touched && loginForm.get('username').invalid}">
+                <div *ngIf="loginForm.get('username').touched && loginForm.get('username').invalid"
+                  class="invalid-feedback">
+                  <div *ngIf="loginForm.get('username').errors.required">UserName is required</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="password" class="col-form-label">Enter Password: </label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Enter Password"
+                  formControlName="password"
+                  [ngClass]="{'is-invalid': loginForm.get('password').touched && loginForm.get('password').invalid}">
+                <div *ngIf="loginForm.get('password').touched && loginForm.get('password').invalid"
+                  class="invalid-feedback">
+                  <div *ngIf="loginForm.get('password').errors.required">Password is required</div>
+                </div>
+              </div>
+
+              <input [disabled]="loginForm.invalid" type="button" class="btn btn-success btn-block" value="Submit"
+                (click)="onLoginClick()"><br>
+              <p style="text-align:center ; color: red;" *ngIf=statusCred>Invalid Credentials !!!</p>
+              <!-- <p style="text-align:center ; color: red;" *ngIf=statusExistUser>Given User Doesn't have account. <br> Please SignUp first !</p>  -->
+              <p style="text-align: center;">If New User ? Please,<a [routerLink]="['/signup']"> click here </a> to
+                register.</p>
+            </form> <br>
+          </div>
+        </div>
+      </body>
+    </div>
+  </div>
+</div>
+
+</html>
