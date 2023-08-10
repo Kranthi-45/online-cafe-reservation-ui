@@ -18,7 +18,7 @@ export class MenuService {
   }
   modifyMenu(menu:any)
   {
-    return this.http.put(this.url,menu);
+    return this.http.put(this.url+"/"+menu.itemId,menu);
   }
   removeMenu(id:any)
   {

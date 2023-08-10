@@ -1,0 +1,23 @@
+
+<div id="mySidenav" class="sidenav">
+    <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+    <a [routerLink]="['/user/dashboard']">DashBoard</a>
+    <a [routerLink]="['/user/profile']">My Profile</a>
+    <a [routerLink]="['/user/book-table']">Book Table</a>
+    <a [routerLink]="['/user/my-bookings']">My Bookings</a>
+    <a [routerLink]="['/user/faqs']">FAQ's</a>
+  </div>
+  
+  <!-- <h2>Animated Sidenav Example</h2>
+  <p>Click on the element below to open the side navigation menu.</p>
+  <span style="font-size:30px;cursor:pointer" onclick='openNav()'>&#9776; open</span> -->
+  
+  <script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  </script>
