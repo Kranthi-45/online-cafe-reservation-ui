@@ -12,11 +12,6 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
 
-  dummy()
-  {
-    return this.http.get("http://localhost:8080");
-  }
-
   getAllUsers(){
     return this.http.get(this.url);
   }
@@ -31,7 +26,7 @@ export class UserService {
   }
 
   modifyUser(myuser:any){
-    return this.http.put(this.url,myuser);
+    return this.http.put(this.url + "/" + myuser.userId,myuser);
   }
 
   getUserById(id:any){
@@ -43,9 +38,9 @@ export class UserService {
     return this.http.post(this.url,myuser);
   }
 
-  getUserCount(){
-    return this.http.get(this.url+"/count");
-  }
+  // getUserCount(){
+  //   return this.http.get(this.url+"/count");
+  // }
 
   loginStatus()
   {
@@ -58,9 +53,9 @@ export class UserService {
     return myObservable;
   }
 
-  getOtp(email:string)
-  {
-    return this.http.get(this.url+"/otp/"+email);
-  }
+  // getOtp(email:string)
+  // {
+  //   return this.http.get(this.url+"/otp/"+email);
+  // }
   
 }

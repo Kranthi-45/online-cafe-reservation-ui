@@ -59,6 +59,7 @@ export class LoginComponent implements OnInit {
             }
             if (role.role == "user") {
               console.log("user loggedin")
+              localStorage.setItem("user",JSON.stringify(user));
               this.router.navigate(['/user/dashboard']);
             }
             else {

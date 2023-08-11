@@ -14,11 +14,13 @@ import { MyBookingsComponent } from './components/my-bookings/my-bookings.compon
 import { FaqComponent } from './components/faq/faq.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent ,  pathMatch: 'full'},
   { path: 'login', component: LoginComponent ,  pathMatch: 'full'},
   { path: 'register', component: RegistrationComponent ,  pathMatch: 'full'},
+  { path: 'change-password', component: ChangePasswordComponent ,  pathMatch: 'full'},
   {
     path: 'admin',
     component: AdminModuleComponent,
