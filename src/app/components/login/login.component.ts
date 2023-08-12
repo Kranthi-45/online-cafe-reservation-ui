@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginClick(): void {
-    var role = "user";
+    // var role = "user";
     this.username = this.loginForm.controls['username'].value;
     this.password = this.loginForm.controls['password'].value;
     this.us.login(this.username, this.password).subscribe(

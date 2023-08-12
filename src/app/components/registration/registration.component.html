@@ -131,6 +131,19 @@
                 </div>
               </div>
 
+              <div class="form-group">
+                <label for="role" class="form-label">Role</label>
+                <select id="role" class="form-control" formControlName="role"
+                  [ngClass]="{'is-invalid': signupForm.get('role').touched && signupForm.get('role').invalid}">
+                  <option value="" disabled selected>Select a role</option>
+                  <option value="user">User</option>
+                  <option value="admin">Admin</option>
+                </select>
+                <div *ngIf="signupForm.get('role').touched && signupForm.get('role').invalid" class="invalid-feedback">
+                  <div *ngIf="signupForm.get('role').errors.required">Role is required</div>
+                </div>
+              </div>
+              
               <!-- <input type="button" value="Generate Otp"  class="btn btn-success" (click)="fnGenerateOtp()"><label>&nbsp;{{message}} </label><br><br>
           <label>Enter Otp:</label> 
            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; <input type="text" name="abcd" placeholder="Enter OTP" id="" [(ngModel)]="txtOtp"  (keyup)="fnValidateOtp()" formControlName="otp">
