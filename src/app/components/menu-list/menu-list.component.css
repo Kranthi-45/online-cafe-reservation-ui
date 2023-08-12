@@ -1,0 +1,17 @@
+.rounded-button {
+    border-radius: 20px; 
+    margin: 5px;
+  }
+  .rounded-button {
+    border: 2px solid green;
+    background-color: transparent; 
+    color: green; 
+    border-radius: 20px;
+    margin: 5px;
+  }
+
+  .rounded-button.active {
+    background-color: green; 
+    color: white; 
+    border-color: green; 
+  }

@@ -26,6 +26,7 @@ import { ChangePasswordComponent } from './components/change-password/change-pas
 import { TableComponent } from './components/table/table.component';
 import { ReservationComponent } from './components/reservation/reservation.component';
 import { ReservationSummaryComponent } from './components/reservation-summary/reservation-summary.component';
+import { MenuListComponent } from './components/menu-list/menu-list.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { ReservationSummaryComponent } from './components/reservation-summary/re
     ChangePasswordComponent,
     TableComponent,
     ReservationComponent,
-    ReservationSummaryComponent
+    ReservationSummaryComponent,
+    MenuListComponent
   ],
   imports: [
     BrowserModule,

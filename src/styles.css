@@ -35,6 +35,14 @@ html, body {
     -webkit-animation: spin 2s linear infinite;
     animation: spin 1s linear infinite;
   }
+
+  .invalid-feedback, .help-block{
+    color: red;
+}
+.is-invalid, .has-error{
+  color: red;
+  border-color: red;
+}
   
   /* Safari */
   @-webkit-keyframes spin {

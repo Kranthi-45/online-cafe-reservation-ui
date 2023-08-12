@@ -2,26 +2,102 @@
 <h3> Dashboard</h3>
 <app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
 <div class="card-containers">
-    <div class="card red"></div>
-    <div class="card blue"></div>
-    <div class="card green"></div>
-    <div class="card yellow"></div>
+    <div class="card red">
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+          <div><br>
+            <h4>{{ this.reservationsLength }} </h4>
+            <h4>Reservations</h4>
+          </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+      </div>
+    </div>
+    <div class="card blue">
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+          <div><br>
+            <h4>{{ this.menusLength }} </h4>
+            <h4>Menus</h4>
+          </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+      </div>
+    </div>
+    <div class="card green">
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+          <div><br>
+            <h4>1 </h4>
+            <h4>Contacts</h4>
+          </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+      </div>
+    </div>
+    <div class="card yellow">
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+          <div><br>
+            <h4>5</h4>
+            <h4>Photos </h4>
+          </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+      </div>
+    </div>
 </div>
 
-<h3> Reservation</h3><br>
+<h3> Reservations</h3><br>
 <div class="container">
     <table class="table table-bordered-collapse table-striped table-hover">
-        <thead>
-        <th>Customer Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Visit Date</th>
-        <th>Time</th>
-        <th>No. of People</th>
-        <th>Customer Message</th>
-        <th>Booking Time</th>
-        <th>Confirm Booking</th>
-        <th>Status</th>
-        </thead>
+            <thead>
+              <tr>
+                <th>Reservation ID</th>
+                <th>Customer Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Visit Date</th>
+                <th>Time</th>
+                <th>No. of People</th>
+                <th>Customer Message</th>
+                <th>Booking Time</th>
+                <th>Confirm Booking</th>
+                <th>Status</th>
+                <th>User ID</th>
+                <th>Table ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let reservation of reservations">
+                <td>{{ reservation.id }}</td>
+                <td>{{ reservation.name }}</td>
+                <td>{{ reservation.email }}</td>
+                <td>{{ reservation.phone }}</td>
+                <td>{{ reservation.date | date: 'MM/dd/yyyy' }}</td>
+                <td>{{ reservation.time }}</td>
+                <td>{{ reservation.numberOfPeople }}</td>
+                <td>{{ reservation.customMessage }}</td>
+                <td>{{ reservation.createdDate | date: 'MM/dd/yyyy HH:mm:ss' }}</td>
+                <td>
+                  <button class="btn btn-primary" (click)="confirmBooking(reservation.id)" [disabled]="reservation.status === 'Booking Confirmed'">Confirm</button>
+                </td>
+                <td>{{ reservation.status }}</td>
+                <td>{{ reservation.user.userId }}</td>
+                <td>{{ reservation.table?.id }}</td> <!-- Use optional chaining to handle cases where the table is null -->
+              </tr>
+            </tbody>          
     </table>
 </div>

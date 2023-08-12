@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user.model';
 import { UserService } from 'src/app/services/user.service';
 
@@ -16,10 +17,14 @@ export class ChangePasswordComponent implements OnInit {
   errorMessage: string = '';
   checkFailedScenario : any;
 
-  constructor(private us: UserService) { }
+  constructor(private us: UserService, private router: Router) { }
 
   ngOnInit(): void {
 
+  }
+
+  goBack() {
+    this.router.navigate(['/']); // Replace 'otherpage' with the actual route
   }
 
   verifyCurrentPassword(userId: any): Promise<boolean> {

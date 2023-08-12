@@ -27,5 +27,9 @@ export class MenuService {
   findMenuById(id:any){
     return this.http.get(this.url+"/"+id);
   }
+
+  getMenusByType(type:any){
+    return this.http.get(this.url+"/by-type/"+ type);
+  }
   
 }
