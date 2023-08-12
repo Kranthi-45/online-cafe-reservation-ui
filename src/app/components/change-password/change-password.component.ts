@@ -14,7 +14,7 @@ export class ChangePasswordComponent implements OnInit {
   newPassword: string = '';
   message: string = '';
   errorMessage: string = '';
-
+  checkFailedScenario : any;
 
   constructor(private us: UserService) { }
 
@@ -29,9 +29,11 @@ export class ChangePasswordComponent implements OnInit {
         if (data.password === this.currentPassword) {
           resolve(true);
         } else {
+          this.checkFailedScenario = data
           resolve(false);
         }
       }, error => {
+        this.checkFailedScenario = "";
         resolve(false);
       });
     });
@@ -54,7 +56,11 @@ export class ChangePasswordComponent implements OnInit {
           this.errorMessage = "Something went wrong.. pleas try again";
         });
       } else {
-        this.errorMessage = "Current password is incorrect, please enter valid data"; // Handle error messages
+        if(this.checkFailedScenario.userId){
+          this.errorMessage = "Current password is incorrect, please enter valid data"; // Handle error messages
+        }else{
+          this.errorMessage = "UserId not found, please enter valid data"; // Handle error messages
+        }
       }
     } catch (error) {
       this.errorMessage = "Something went wrong..";

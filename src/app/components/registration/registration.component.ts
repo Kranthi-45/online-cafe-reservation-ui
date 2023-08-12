@@ -30,7 +30,7 @@ export class RegistrationComponent implements OnInit {
       gender: [],
       password: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(10), Validators.pattern(/[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/)]],
       cpassword: ['', [Validators.required]],
-      role: ['', [Validators.required]],
+      // role: ['', [Validators.required]],
       // otp: []
     },
     {
@@ -81,8 +81,8 @@ export class RegistrationComponent implements OnInit {
         phone: this.signupForm.controls['phone'].value,
         gender: this.signupForm.controls['gender'].value,
         password: this.signupForm.controls['password'].value,
-        // role: "user",
-        role: this.signupForm.controls['role'].value,
+        role: "user",
+        // role: this.signupForm.controls['role'].value,
       };
       console.log("registering user", newUser);
       this.us.signup(newUser).subscribe(
