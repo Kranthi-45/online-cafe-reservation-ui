@@ -1,1 +1,176 @@
-<p>registration works!</p>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cafe</title>
+</head>
+
+<div class="row mobileLoginContainer">
+  <div class="col-md-7 mobileQuotes" style="color: darkgrey"><br><br><br><br><br>
+    <h4 style="font-style: italic; font-weight: bold; text-align: center; font-family:cursive">“ The whole life is just
+      like eating a food."</h4>
+    <h4 style="font-style: italic; font-weight: bold; margin-left:700px; font-family:cursive">..Terry</h4> <br>
+    <h4 style="font-style: italic; font-weight: bold; text-align: center; font-family:cursive">“ Delicacy can fill your
+      empty spaces in life and loneliness"</h4>
+    <h4 style="font-style: italic; font-weight: bold; margin-left:750px; font-family:cursive">..Pedro</h4> <br>
+
+  </div>
+  <div class="col-md-4">
+
+    <body>
+      <div class="box-shadow">
+        <div id="bg1">
+          <form [formGroup]="signupForm">
+            <div *ngIf="!signUpFormSuccess">
+              <br>
+              <h3 style="text-align:center;">Create Your Account</h3>
+              <div class="form-group">
+                <label for="userName" class="col-form-label">User Name: </label>
+                <input type="text" name="" id="userName" placeholder="Enter UserName" class="form-control"
+                  formControlName="userName"
+                  [ngClass]="{'is-invalid': signupForm.get('userName').touched && signupForm.get('userName').invalid}">
+                <div *ngIf="signupForm.get('userName').touched && signupForm.get('userName').invalid"
+                  class="invalid-feedback">
+                  <div *ngIf="signupForm.get('userName').errors.required">UserName is required</div>
+                  <div *ngIf="signupForm.get('userName').errors.minlength">Min Length 5 </div>
+                  <div *ngIf="signupForm.get('userName').errors.maxlength">Max Length 10 </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="firstName" class="col-form-label">First Name: </label>
+                <input type="text" name="" id="firstName" placeholder="Enter FirstName" class="form-control"
+                  formControlName="firstName"
+                  [ngClass]="{'is-invalid': signupForm.get('firstName').touched && signupForm.get('firstName').invalid}">
+                <div *ngIf="signupForm.get('firstName').touched && signupForm.get('firstName').invalid"
+                  class="invalid-feedback">
+                  <div *ngIf="signupForm.get('firstName').errors.required">firstName is required</div>
+                  <div *ngIf="signupForm.get('firstName').errors.minlength">Min Length 5 </div>
+                  <div *ngIf="signupForm.get('firstName').errors.maxlength">Max Length 10 </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="lastName" class="col-form-label">Last Name: </label>
+                <input type="text" name="" id="lastName" placeholder="Enter lastName" class="form-control"
+                  formControlName="lastName"
+                  [ngClass]="{'is-invalid': signupForm.get('lastName').touched && signupForm.get('lastName').invalid}">
+                <div *ngIf="signupForm.get('lastName').touched && signupForm.get('lastName').invalid"
+                  class="invalid-feedback">
+                  <div *ngIf="signupForm.get('lastName').errors.required">lastName is required</div>
+                  <div *ngIf="signupForm.get('lastName').errors.minlength">Min Length 5 </div>
+                  <div *ngIf="signupForm.get('lastName').errors.maxlength">Max Length 10 </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email Id</label>
+                <input type="text" id="email" class="form-control" placeholder="Enter Your Email Address"
+                  formControlName="email"
+                  [ngClass]="{'is-invalid': signupForm.get('email').touched && signupForm.get('email').invalid}" />
+                <div *ngIf="signupForm.get('email').touched && signupForm.get('email').invalid"
+                  class="invalid-feedback">
+                  <div *ngIf="signupForm.get('email').errors.required">Email is required</div>
+                  <div *ngIf="signupForm.get('email').errors.email">Email is must be valid email address</div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone No</label>
+                <input type="number" class="form-control" placeholder="Enter Phone number" id="phone"
+                  formControlName="phone"
+                  [ngClass]="{'is-invalid': signupForm.get('phone').touched && signupForm.get('phone').invalid}" />
+                <div *ngIf="signupForm.get('phone').touched && signupForm.get('phone').invalid"
+                  class="invalid-feedback">
+                  <div *ngIf="signupForm.get('phone').errors.required"> Phone number is required</div>
+                  <div *ngIf="signupForm.get('phone').errors.pattern">Enter Valid Phone number</div>
+                </div>
+              </div>
+
+              <div class="mb-3 form-radio">
+                <label class="form-label">Gender</label> &nbsp;
+                <input type="radio" name="gender" value="male" class="form-radio-input" id="exampleCheck1"
+                  formControlName="gender">
+                <label class="form-radio-label" for="exampleCheck1">Male</label>&nbsp;
+                <input type="radio" name="gender" value="female" class="form-radio-input" id="exampleCheck1"
+                  formControlName="gender">
+                <label class="form-radio-label" for="exampleCheck1">Female</label>
+              </div>
+
+              <div class="form-group">
+                <label for="password" class="col-form-label">Create Password: </label>
+                <input type="password" name="password" id="password" placeholder="Password" class="form-control"
+                  formControlName="password"
+                  [ngClass]="{'is-invalid': signupForm.get('password').touched && signupForm.get('password').invalid}">
+                <i class="fas fa-eye" id="togglePassword"
+                  style="margin-left: 340px;cursor: pointer;color: black;top: -30px;position: relative;"
+                  (click)="fnpasseye($event)"></i>
+                <div *ngIf="signupForm.get('password').touched && signupForm.get('password').invalid"
+                  class="invalid-feedback pass">
+                  <div *ngIf="signupForm.get('password').errors.required">Password is required</div>
+                  <div *ngIf="signupForm.get('password').errors.minlength">Min Length 6 </div>
+                  <div *ngIf="signupForm.get('password').errors.maxlength">Max Length 10 </div>
+                  <div *ngIf="signupForm.get('password').errors.pattern">Special Characters required</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="cpassword" class="col-form-label">Re-Enter Password: </label>
+                <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password"
+                  class="form-control" formControlName="cpassword"
+                  [ngClass]="{'is-invalid': signupForm.get('cpassword').touched && signupForm.get('cpassword').invalid}">
+                <i class="fas fa-eye" id="togglePassword"
+                  style="margin-left: 340px;cursor: pointer;color: black;top: -30px;position: relative;"
+                  (click)="fnpasseye($event)"></i>
+                <div *ngIf="signupForm.get('cpassword').touched && signupForm.get('cpassword').invalid"
+                  class="invalid-feedback pass">
+                  <div *ngIf="signupForm.get('cpassword').errors.required && signupForm.get('cpassword').invalid">
+                    Confirm Password is required</div>
+                  <div *ngIf="signupForm.get('cpassword').errors.MustMatch && signupForm.get('cpassword').invalid">
+                    Confirm Password Didn't match </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="role" class="form-label">Role</label>
+                <select id="role" class="form-control" formControlName="role"
+                  [ngClass]="{'is-invalid': signupForm.get('role').touched && signupForm.get('role').invalid}">
+                  <option value="" disabled selected>Select a role</option>
+                  <option value="user">User</option>
+                  <option value="admin">Admin</option>
+                </select>
+                <div *ngIf="signupForm.get('role').touched && signupForm.get('role').invalid" class="invalid-feedback">
+                  <div *ngIf="signupForm.get('role').errors.required">Role is required</div>
+                </div>
+              </div>
+              
+              <!-- <input type="button" value="Generate Otp"  class="btn btn-success" (click)="fnGenerateOtp()"><label>&nbsp;{{message}} </label><br><br>
+          <label>Enter Otp:</label> 
+           &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; <input type="text" name="abcd" placeholder="Enter OTP" id="" [(ngModel)]="txtOtp"  (keyup)="fnValidateOtp()" formControlName="otp">
+           <br> -->
+
+              <input [disabled]="!signupForm.valid" type="button" class="btn btn-primary btn-block" value="Submit"
+                (click)="onSignupClick() " style="margin-top: 10px;"><br>
+              <!-- <input type="reset" value="Reset" class="btn btn-warning"> -->
+              <div style="color: white; text-align: center;" id="signupsuccess" *ngIf="signStatus">
+                Successfully Account is Registered. <br> <a [routerLink]="['/login']"> Click here </a> to Login. <br>
+              </div> <br>
+
+            </div>
+            <div *ngIf="signUpFormSuccess">
+              <div style="color: yellow; text-align: center;" id="signupsuccess">
+                <img src="https://cdn.dribbble.com/users/870130/screenshots/2295446/check-in.gif" width="50%"
+                  alt="Logoutimage" /> <br />
+                Your Account is Successfully Created. <br /> <label style="color: white;"> Click <a href="/login"> here
+                  </a> to Login.</label> <br />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </body><br><br><br><br>
+  </div>
+  <div class="col-md-0">
+  </div>
+</div>
+</html>

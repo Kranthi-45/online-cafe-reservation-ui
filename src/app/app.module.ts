@@ -23,6 +23,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { LoginComponent } from './components/login/login.component';
     ProfileComponent,
     FaqComponent,
     RegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
