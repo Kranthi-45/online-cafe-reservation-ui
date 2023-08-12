@@ -7,12 +7,13 @@
 }
 
 .top-navbar .book-btn{    
-    background-color: yellow;
+    background-color: green;
     border-radius: 30px;
     height: 40px;
     width: 120PX;
     text-align: center;
     margin-top: 6PX;
+    color:white
 }
 
 .top-navbar.navbar {

@@ -1,0 +1,54 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-6">
+      <h2 class="text-center" style="color: green;">Reservation Summary</h2> <br>
+
+      <table class="table table-bordered-collapse table-striped table-hover " style="margin-left:100px">
+        <tr>
+          <thead>
+          <th>Name:</th>
+          </thead>
+          <td>{{ reservation.name }}</td>
+        </tr>
+        <tr>
+          <th>Email:</th>
+          <td>{{ reservation.email }}</td>
+        </tr>
+        <tr>
+          <th>Phone:</th>
+          <td>{{ reservation.phone }}</td>
+        </tr>
+        <tr>
+          <th>Date:</th>
+          <td>{{ reservation.date }}</td>
+        </tr>
+        <tr>
+          <th>Time:</th>
+          <td>{{ reservation.time }}</td>
+        </tr>
+        <tr>
+          <th>Number of People:</th>
+          <td>{{ reservation.numberOfPeople }}</td>
+        </tr>
+        <tr>
+          <th>Custom Message:</th>
+          <td>{{ reservation.customMessage }}</td>
+        </tr>
+        <tr>
+          <th>Created Date:</th>
+          <td>{{ reservation.createdDate }}</td>
+        </tr>
+        <tr>
+          <th>Status:</th>
+          <td>{{ reservation.status }}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-3">
+
+    </div>
+  </div>
+</div>

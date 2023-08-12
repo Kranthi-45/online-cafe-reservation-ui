@@ -6,7 +6,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
-        <li><a [routerLink]="['/admin/dashboard']">Menu</a></li>
+        <li><a [routerLink]="['/menu-list']">Menu</a></li>
         <li><a href="#">Gallery</a></li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
           Contact <span class="caret"></span></a>
@@ -15,14 +15,14 @@
             <li>online.cafe@gmail.com</li>
           </ul>
         </li>
-        <li><a class="book-btn">Book A Table</a></li>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa-thin fa-user"></i>
+        <li><a class="book-btn" [routerLink]="['/book-table']" >Book A Table</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa-thin fa-user"></i>{{userName}}
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a [routerLink]="['/register']">Sign up</a></li>
-            <li><a [routerLink]="['/login']">Login</a></li>
-            <li><a [routerLink]="['/admin/dashboard']">Direct Admin Login</a></li>
-            <li><a [routerLink]="['/user/dashboard']">Direct User Login</a></li>
+            <li><a [routerLink]="['/register']" *ngIf="signupnave">Sign up</a></li>
+            <li><a [routerLink]="['/login']" (click)="loginout(status)">{{status | titlecase}}</a></li>
+            <!-- <li><a [routerLink]="['/admin/dashboard']">Direct Admin Login</a></li>
+            <li><a [routerLink]="['/user/dashboard']">Direct User Login</a></li> -->
           </ul>
         </li>
       </ul>

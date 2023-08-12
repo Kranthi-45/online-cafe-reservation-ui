@@ -1,0 +1,106 @@
+<div class="container mt-5">
+  <div class="home-container">
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6 text-center">
+                <h2 class="home-heading" style="color: green;"> Book a Table</h2>
+                <p class="home-text">In this article, we’ll show you ethat you can use to help your venue attract new guests, and make them remember what’s unique about your specific restaurant!</p>
+            </div>
+            <div class="col-md-3">
+            </div>
+    </div>
+</div><br>
+  <div class="row">
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-10">
+      <!-- <h2>Make a Reservation</h2> -->
+      <form [formGroup]="reservationForm" class="reservation-form">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" formControlName="name" placeholder="Your Name">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" formControlName="email" placeholder="Your Email">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="text" class="form-control" id="phone" formControlName="phone" placeholder="Your Phone">
+            </div>
+          </div>
+        </div>  
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" class="form-control" id="date" formControlName="date" placeholder="Date">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="time">Time</label>
+              <input type="time" class="form-control" id="time" formControlName="time" placeholder="Time">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="numberOfPeople">Number of People</label>
+              <input type="number" class="form-control" id="numberOfPeople" formControlName="numberOfPeople"  placeholder="# of people">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="customMessage">Custom Message</label>
+              <textarea class="form-control" id="customMessage" formControlName="customMessage" rows="4" placeholder="message"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-success rounded-button submitBtn" data-toggle="modal" data-target="#myModal">Reserve my Table</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+
+    <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+
+      <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Please Confirm your UserId</h4>
+        </div>
+        <div class="modal-body">
+          <label for="name">UserId</label><span style="color:red">*</span>
+          <input type="number" class="form-control" id="userId"  [(ngModel)]="userId" name="userId" placeholder="Enter UserId" [disabled]="isLoggedInUser">        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-success" data-dismiss="modal" (click)="submitReservation()">Submit</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  </div>

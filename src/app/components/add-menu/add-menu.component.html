@@ -6,8 +6,8 @@
         <div class="form-group">
           <label class="control-label col-sm-2" for="menu-name" >Menu Name</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" formControlName="menuName" id="menu-name" placeholder="Enter Menu Name" [ngClass]="{'has-error': addMenuForm.get('menuName')?.touched && addMenuForm.get('menuName')?.invalid}">
-            <div *ngIf="addMenuForm.get('menuName')?.touched && addMenuForm.get('menuName')?.invalid" class="help-block">
+            <input type="text" class="form-control" formControlName="menuName" id="menu-name" placeholder="Enter Menu Name" [ngClass]="{'is-invalid': addMenuForm.get('menuName')?.touched && addMenuForm.get('menuName')?.invalid}">
+            <div *ngIf="addMenuForm.get('menuName')?.touched && addMenuForm.get('menuName')?.invalid" class="invalid-feedback">
               <div *ngIf="addMenuForm.get('menuName')?.errors?.required">Item Name is Required</div>
             </div>
           </div>
