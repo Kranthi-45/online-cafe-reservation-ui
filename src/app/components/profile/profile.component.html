@@ -1,1 +1,65 @@
-<p>profile works!</p>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<br>
+<div class="container-fluid">
+    <hr class="mobileLine">
+    <div class="row">
+        <div class="col-md-5">
+        </div>
+        <div class="col-md-7" >
+           <div class="col-lg-4 col-md-6 col-sm-6 mt-80">
+               <div class="card bg-transparent d-flex align-items-center justify-content-center ">
+                   <div class="w-90"><img src="https://image.shutterstock.com/image-vector/user-login-authenticate-icon-human-260nw-1365533969.jpg" alt="" class="rounded-circle"></div>
+                   <div class="text-center ">
+                        <p class="name">{{userDetails1.userName | titlecase}}</p>
+                        <p class="job">{{userDetails1.email}} </p>
+                        <p class="dis pb-4">{{userDetails1.gender | titlecase}}<br>{{userDetails1.phone | titlecase}} <br> 
+                            <input type="button"  style="background-color: rgb(91, 164, 209); color: black; " class="form-control " value="Edit" (click)="fnEdit()">
+                        </p>
+                   </div>
+               </div>
+           </div>
+       </div>
+    
+       </div>
+
+       <div class="row">
+           <div class="col-md-4">
+
+           </div>
+           <div class="col-sm-5" *ngIf=status>
+            <form class="mobileUserForm" [formGroup]="userForm" *ngIf=!statusInfo>
+                <label>User Id</label>
+                <input type="text" name="" id="" class="form-control" formControlName="userId">
+                <label>User Name</label>
+                <input type="text" name="" id="" class="form-control" formControlName="userName">
+                <label>Password</label>
+                <input type="text" name="" id="" class="form-control" formControlName="password">
+                <label>First Name</label>
+                <input type="text" name="" id="" class="form-control" formControlName="firstName">
+                <label>Last Name</label>
+                <input type="text" name="" id="" class="form-control" formControlName="lastName">
+                <label>Email Id</label>
+                <input type="text" name="" id="" class="form-control" formControlName="email">
+                <label>Phone No</label>
+                <input type="text" name="" id="" class="form-control" formControlName="phone">
+                <label>Gender</label>
+                <input type="text" name="" id="" class="form-control" formControlName="gender"><br>
+                <input type="button" value="Update" class="btn btn-success"  data-toggle="modal" data-target="#myModal" (click)="fnModify()">
+                
+             </form><br>
+             <div class="alert alert-success alert-dismissible" *ngIf=statusInfo >
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                 Your Details are <strong>Successfully Updated</strong>
+              </div>
+        </div>
+        <div class="col-md-3">
+
+        </div>
+    </div>
+    <br> <br> <br> <br> 
+</div>
