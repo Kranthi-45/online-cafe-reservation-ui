@@ -20,13 +20,14 @@ import { ReservationSummaryComponent } from './components/reservation-summary/re
 import { MenuListComponent } from './components/menu-list/menu-list.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { AboutComponent } from './components/about/about.component';
+import { AuthGuard } from './utils/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent ,  pathMatch: 'full'},
   { path: 'login', component: LoginComponent ,  pathMatch: 'full'},
   { path: 'register', component: RegistrationComponent ,  pathMatch: 'full'},
   { path: 'change-password', component: ChangePasswordComponent ,  pathMatch: 'full'},
-  { path: 'book-table', component: TableComponent ,  pathMatch: 'full'},
+  { path: 'book-table', component: TableComponent ,  pathMatch: 'full',canActivate: [AuthGuard]},
   { path: 'reservation', component: ReservationComponent ,  pathMatch: 'full'},
   { path: 'summary', component: ReservationSummaryComponent ,  pathMatch: 'full'},
   { path: 'menu-list', component: MenuListComponent ,  pathMatch: 'full'},
@@ -41,7 +42,6 @@ const routes: Routes = [
       { path: 'add-menu', component: AddMenuComponent ,  pathMatch: 'full'},
       { path: 'complete-menu', component: CompleteMenuComponent ,  pathMatch: 'full'},
       { path: 'contact-details', component: ContactDetailsComponent ,  pathMatch: 'full'},
-
     ],
   },
   {

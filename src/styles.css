@@ -11,6 +11,10 @@ html, body {
     box-sizing: border-box;   
 }
 
+.rounded-icon{
+  border-radius: 35px;;
+}
+
 * {
     -webkit-box-sizing: border-box; 
     -moz-box-sizing: border-box;
