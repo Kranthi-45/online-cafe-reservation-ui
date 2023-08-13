@@ -16,7 +16,7 @@
           </ul>
         </li>
         <li><a class="book-btn" [routerLink]="['/book-table']" >Book A Table</a></li>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa-thin fa-user"></i>{{userName}}
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">{{userName}} &nbsp; <img class="rounded-icon" src="../../../assets/images/profile-icon.jpg" style="width: 22px;"/>
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a [routerLink]="['/register']" *ngIf="signupnave">Sign up</a></li>
