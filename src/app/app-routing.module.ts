@@ -19,6 +19,7 @@ import { ReservationComponent } from './components/reservation/reservation.compo
 import { ReservationSummaryComponent } from './components/reservation-summary/reservation-summary.component';
 import { MenuListComponent } from './components/menu-list/menu-list.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent ,  pathMatch: 'full'},
@@ -30,7 +31,7 @@ const routes: Routes = [
   { path: 'summary', component: ReservationSummaryComponent ,  pathMatch: 'full'},
   { path: 'menu-list', component: MenuListComponent ,  pathMatch: 'full'},
   { path: 'gallery', component: GalleryComponent ,  pathMatch: 'full'},
-
+  { path: 'about', component: AboutComponent ,  pathMatch: 'full'},
   {
     path: 'admin',
     component: AdminModuleComponent,
