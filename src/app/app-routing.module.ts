@@ -18,6 +18,7 @@ import { TableComponent } from './components/table/table.component';
 import { ReservationComponent } from './components/reservation/reservation.component';
 import { ReservationSummaryComponent } from './components/reservation-summary/reservation-summary.component';
 import { MenuListComponent } from './components/menu-list/menu-list.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent ,  pathMatch: 'full'},
@@ -28,6 +29,8 @@ const routes: Routes = [
   { path: 'reservation', component: ReservationComponent ,  pathMatch: 'full'},
   { path: 'summary', component: ReservationSummaryComponent ,  pathMatch: 'full'},
   { path: 'menu-list', component: MenuListComponent ,  pathMatch: 'full'},
+  { path: 'gallery', component: GalleryComponent ,  pathMatch: 'full'},
+
   {
     path: 'admin',
     component: AdminModuleComponent,

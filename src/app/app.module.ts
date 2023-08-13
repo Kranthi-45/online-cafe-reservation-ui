@@ -27,6 +27,7 @@ import { TableComponent } from './components/table/table.component';
 import { ReservationComponent } from './components/reservation/reservation.component';
 import { ReservationSummaryComponent } from './components/reservation-summary/reservation-summary.component';
 import { MenuListComponent } from './components/menu-list/menu-list.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { MenuListComponent } from './components/menu-list/menu-list.component';
     TableComponent,
     ReservationComponent,
     ReservationSummaryComponent,
-    MenuListComponent
+    MenuListComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
