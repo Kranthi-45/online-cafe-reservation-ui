@@ -1,0 +1,19 @@
+/* Add a shadow effect to the form container */
+.reservation-form {
+    box-shadow:
+    0 0 8px rgba(0, 0, 0, 0.1), /* Top */
+    0 4px 6px -2px rgba(0, 0, 0, 0.1), /* Bottom */
+    4px 0 6px -2px rgba(0, 0, 0, 0.1), /* Right */
+    -4px 0 6px -2px rgba(0, 0, 0, 0.1); /* Left */   
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  /* Style the rounded button */
+  .rounded-button {
+    border-radius: 50px; /* Use a high value to make it rounded */
+  }
+  
+  .submitBtn{
+    text-align: center;
+  }

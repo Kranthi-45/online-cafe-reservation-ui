@@ -1,1 +1,38 @@
-<p>my-bookings works!</p>
+<div class="container"><br><br>
+    <div class="row">
+        <div class="col-md-1">
+
+        </div>
+        <div class="col-md-10">
+          <h2 class="text-center text-success" >Booking History</h2><br>
+            <table class="table table-bordered-collapse table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Number of People</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let reservation of reservations" >
+                    <td>{{ reservation.id }}</td>
+                    <td>{{ reservation.name }}</td>
+                    <td>{{ reservation.email }}</td>
+                    <td>{{ reservation.date | date: 'shortDate' }}</td>
+                    <td>{{ reservation.time }}</td>
+                    <td style="text-align: center;">{{ reservation.numberOfPeople }}</td>
+                    <td style="font-weight: 600;" [ngClass]="{'text-danger': reservation.status === 'Booking pending', 'text-success': reservation.status === 'Booking Confirmed'}">{{ reservation.status }}</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+        </div>
+        <div class="col-md-1">
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<div class="search-table-container">
+    <h2>Book A Table</h2>
+    <form (ngSubmit)="searchTable()" class="search-form">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="tableId">Table ID:</label>
+          <input type="number" id="tableId"  class="form-control" [(ngModel)]="tableId" name="tableId" [ngModelOptions]="{standalone: true}" />
+        </div>
+        <div class="col-md-6">
+          <label style="color:white">S</label>
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="filter-container">
+            <label for="tableTypeFilter">Filter by Table Type:</label>
+            <select id="tableTypeFilter" class="form-control" [(ngModel)]="selectedTableType" (change)="filterTables()" [ngModelOptions]="{standalone: true}" >
+              <option value="">All</option>
+              <option value="AC">AC Room</option>
+              <option value="Non-AC">NON-AC Room</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="container-loader" *ngIf="!displayTable">
+      <div class="loader"></div>
+    </div>
+    <div class="table-details" *ngIf="displayTable">
+      <!-- <div *ngIf="foundTable; else notFound"> -->
+        <!-- <div *ngIf="commonTableResult; else notFound"> -->
+        <h3>Table Results:</h3>
+        <div *ngFor="let table of commonTableResult">
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Table Name</th>
+            <th>Table Type</th>
+            <th>Table Status</th>
+          </tr>
+          <tr>
+            <td>{{ table.id }}</td>
+            <td>{{ table.tableName }}</td>
+            <td>{{ table.tableType }}</td>
+            <td>{{ table.tableStatus }}</td>
+            <td>
+              <button
+            [disabled]="table.tableStatus === 'Reserved'"
+            (click)="reserveTable(table)"
+            [ngClass]="{ 'disabled-button': table.tableStatus === 'Reserved' }"
+          >
+            Reserve
+          </button>
+          
+            </td>
+          </tr>
+        </table>
+      </div>
+   
+    <!-- <ng-template #notFound> -->
+      <div *ngIf="notFound">
+        <p>{{notFound}}</p>
+      </div>
+    <!-- </ng-template> -->
+  </div>
+  <div class="row" style="text-align: center; padding: 10px;">
+    <button class="btn btn-success" style="text-align: center;" [routerLink]="['/reservation']"> Proceed </button>
+  </div>
+</div>
+  <!-- <button class="btn btn-primary mt-2" (click)="goBack()">Back</button> -->
+  <div *ngIf="reservationSuccessMessage" class="success-message">
+    {{ reservationSuccessMessage }}
+  </div>
+  <div *ngIf="reservationErrorMessage" class="error-message">
+    {{ reservationErrorMessage }}
+  </div>
+  

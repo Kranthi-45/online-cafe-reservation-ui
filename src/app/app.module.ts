@@ -17,12 +17,18 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { UserModuleComponent } from './components/user-module/user-module.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { UserSideNavbarComponent } from './components/user-side-navbar/user-side-navbar.component';
-import { BookTableComponent } from './components/book-table/book-table.component';
 import { MyBookingsComponent } from './components/my-bookings/my-bookings.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
+import { TableComponent } from './components/table/table.component';
+import { ReservationComponent } from './components/reservation/reservation.component';
+import { ReservationSummaryComponent } from './components/reservation-summary/reservation-summary.component';
+import { MenuListComponent } from './components/menu-list/menu-list.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -39,19 +45,25 @@ import { LoginComponent } from './components/login/login.component';
     UserModuleComponent,
     UserDashboardComponent,
     UserSideNavbarComponent,
-    BookTableComponent,
     MyBookingsComponent,
     ProfileComponent,
     FaqComponent,
     RegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    ChangePasswordComponent,
+    TableComponent,
+    ReservationComponent,
+    ReservationSummaryComponent,
+    MenuListComponent,
+    GalleryComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

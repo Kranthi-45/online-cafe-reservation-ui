@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8">
+            <h2 class="text-center">Check our tasty Menu</h2>
+            <div class="d-flex justify-content-center text-center">
+              <!-- Flex container for buttons -->
+              <!-- <button class="btn btn-primary rounded-button">Button 1</button>
+              <button class="btn btn-primary rounded-button">Button 2</button>
+              <button class="btn btn-success rounded-button">Button 3</button> -->
+              <button
+              *ngFor="let buttonLabel of buttonLabels; let i = index"
+              class="btn rounded-button"
+              [class.active]="selectedButtonIndex === i"
+              (click)="selectButton(i)"
+            >
+              {{ buttonLabel }}
+              </button>
+            </div>   
+            <div *ngFor="let item of menus">
+              <div [ngClass]="{'each-item': !item.enable}">
+                <h2 style="color: green;">{{item.itemName}}</h2>
+                <p>{{item.description}}</p>
+                <span [ngClass]="{'show': !item.enable}" style="font-weight: bold; color:black; display: none;">Not Available</span>
+                <span style="float: right;font-weight: bold;"> $ {{item.price}}</span>
+                <hr style="color: green; border-top-width: 1px; border-color: rgba(105, 230, 105, 0.296);">
+              </div>
+            </div>
+            <div *ngIf="notFoundMssg"> <br>
+                <h4 class="text-center" style="color: red;">{{notFoundMssg}}</h4>
+            </div>                 
+        </div>
+        <div class="col-md-2">
+
+        </div>
+    </div>
+</div>
+      <script>
+    // JavaScript to toggle the active class on button selection
+    const buttons = document.querySelectorAll('.rounded-button');
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        buttons.forEach((b) => b.classList.remove('active'));
+        button.classList.add('active');
+      });
+    });
+  </script>

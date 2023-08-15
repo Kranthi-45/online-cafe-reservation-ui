@@ -1,0 +1,35 @@
+.carousel-inner {
+    height: 670px;
+   
+    
+   
+    overflow: hidden;
+}
+#galleryCarousel {
+    border: 2px solid darkgreen;
+}
+.carousel {
+    margin: 0;
+}
+.carousel-item {
+    position: relative;
+    background-color: darkgreen;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 660px;
+
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
+    color: #03310d;
+    font-size: 20px;
+}
