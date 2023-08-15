@@ -20,10 +20,13 @@
               </button>
             </div>   
             <div *ngFor="let item of menus">
+              <div [ngClass]="{'each-item': !item.enable}">
                 <h2 style="color: green;">{{item.itemName}}</h2>
                 <p>{{item.description}}</p>
+                <span [ngClass]="{'show': !item.enable}" style="font-weight: bold; color:black; display: none;">Not Available</span>
                 <span style="float: right;font-weight: bold;"> $ {{item.price}}</span>
                 <hr style="color: green; border-top-width: 1px; border-color: rgba(105, 230, 105, 0.296);">
+              </div>
             </div>
             <div *ngIf="notFoundMssg"> <br>
                 <h4 class="text-center" style="color: red;">{{notFoundMssg}}</h4>
